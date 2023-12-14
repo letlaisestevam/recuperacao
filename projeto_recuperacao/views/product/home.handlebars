@@ -1,0 +1,42 @@
+<main class="main">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+   Adicionar Produto
+</button>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">
+    <p>Nome Produto: <span>Quantidade: 10</span></p>
+    <div class="actions">
+       <form action="actions">
+        <button type="submit" class="btn btn-info">Editar</button>
+       </form>
+       <form action="/product/remove/{{this.id}}" method="post">
+         <input type="hidden" name="id" value="">
+        <button type="submit" class="btn btn-danger">Excluir</button>
+       </form>
+
+    </div>
+  </li>
+</ul>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/product/add" method="post">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Nome Produto:</label>
+    <input type="text" name="nome" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="quantidade" class="form-label">Quantidade:</label>
+    <input type="text" name="quantidade" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-primary">Cadastrar</button>
+</form>
+  </div>
+</div>
+</main>
